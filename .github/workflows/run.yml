@@ -43,11 +43,11 @@ jobs:
         run: |
           git clone https://github.com/MohsenEMX2/minecraft-server.git
           cd minecraft-server
-      - name: Enable ngrok
-        run: |
-          sudo systemctl enable ngrok
-          sudo systemctl start ngrok
-          sudo systemctl satus ngrok
+      #- name: Enable ngrok
+      #  run: |
+      #   sudo systemctl enable ngrok
+      #   sudo systemctl start ngrok
+      #   sudo systemctl satus ngrok
       - name: Run the server
         run:  |
           (java -Xms2G -jar server.jar) &
