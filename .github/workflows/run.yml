@@ -45,9 +45,9 @@ jobs:
           cd minecraft-server
       - name: Enable ngrok
         run: |
-          systemctl enable ngrok
-          systemctl start ngrok
-          systemctl satus ngrok
+          sudo systemctl enable ngrok
+          sudo systemctl start ngrok
+          sudo systemctl satus ngrok
       - name: Run the server
         run:  |
           (java -Xms2G -jar server.jar) &
