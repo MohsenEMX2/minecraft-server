@@ -39,9 +39,10 @@ jobs:
         run: mv paper-1.20.4-463.jar server.jar
       - name: Accept Eula
         run: echo eula=true >> eula.txt
-      - name: Stop the server
+      - name: Run and stop server for first time
         run: |
-          (sleep 5 ; echo hi)
-          echo bye
-      - name: Run server for first time
-        run: java -Xms2G -jar server.jar
+          (java -Xms2G -jar server.jar) &
+          sleep 15
+          pkill java
+      - name: ls
+        run: ls
