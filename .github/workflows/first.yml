@@ -31,7 +31,8 @@ jobs:
           distribution: 'oracle' # See 'Supported distributions' for available options
           java-version: '20'
       - run: java -version
-
+      - name: Auto-commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
       # Runs a set of commands using the runners shell
       - name: Clone the repo
         run: |
@@ -48,12 +49,12 @@ jobs:
           (java -Xms2G -jar server.jar) &
           sleep 30
           pkill java
-      - name: Login to github and push
-        run: |
-          git config --global user.email "mohsenemx@gmail.com"
-          git config --global user.name "MohsenEMX2"
-          git add .
-          git commit -m "L"
-          git remote add origin https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git
-          git status
-          git push -u origin main
+     # - name: Login to github and push
+     #   run: |
+      #    git config --global user.email "mohsenemx@gmail.com"
+       #   git config --global user.name "MohsenEMX2"
+        #  git add .
+         # git commit -m "L"
+          #git remote add origin https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git
+          #git status
+          #git push -u origin main
