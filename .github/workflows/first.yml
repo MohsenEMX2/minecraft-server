@@ -50,23 +50,13 @@ jobs:
           sleep 30
           pkill java
           pwd
-      - name: Push to github
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_REPOSITORY_PERSONAL_ACCESS_TOKEN }}
-        with:
-          source-directory: ./
-          destination-github-username: MohsenEMX2
-          destination-repository-name: minecraft-server
-          user-email: mohsenemx@gmail.com
-          # It defaults to `main`
-          target-branch: "main"
-     # - name: Login to github and push
-     #   run: |
-      #    git config --global user.email "mohsenemx@gmail.com"
-       #   git config --global user.name "MohsenEMX2"
-        #  git add .
-         # git commit -m "L"
-          #git remote add origin https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git
-          #git status
-          #git push -u origin main
+      - name: Login to github and push
+        run: |
+          git config --global user.email "mohsenemx@gmail.com"
+          git config --global user.name "MohsenEMX2"
+          git status
+          git add .
+          git commit -m "L"
+          git remote add origin https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git
+          
+          git push https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git origin main
