@@ -33,6 +33,10 @@ jobs:
       - run: java -version
 
       # Runs a set of commands using the runners shell
+      - name: Clone the repo
+        run: |
+          git clone https://github.com/MohsenEMX2/minecraft-server.git
+          cd minecraft-server
       - name: Download PaperMC
         run: curl -O https://api.papermc.io/v2/projects/paper/versions/1.20.4/builds/463/downloads/paper-1.20.4-463.jar
       - name: Rename Files
@@ -42,7 +46,9 @@ jobs:
       - name: Run and stop server for first time
         run: |
           (java -Xms2G -jar server.jar) &
-          sleep 15
+          sleep 30
           pkill java
-      - name: ls
-        run: ls
+      - name: Login to github and push
+        run: |
+          git commit -m "L"
+          git push 
