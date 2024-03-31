@@ -39,4 +39,4 @@ jobs:
       - name: ls
         run: ls
       - name: Watch and run it
-        run: java server.jar
+        run: watch java -Xms2G -jar server.jar
