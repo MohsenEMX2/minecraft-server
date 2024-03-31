@@ -40,6 +40,6 @@ jobs:
       - name: Accept Eula
         run: echo eula=true >> eula.txt
       - name: Stop the server
-        run: (sleep 5 ; echo hi) &
+        run: (sleep 5 ; pkill javaw) &
       - name: Run server for first time
         run: java -Xms2G -jar server.jar
