@@ -49,8 +49,13 @@ jobs:
           (java -Xms2G -jar server.jar) &
           sleep 30
           pkill java
-      - name: Auto-commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.TOKEN }}
+          branch: my-feature-branch
+          title: "Auto-generated changes"
+          body: "This pull request contains auto-generated data."
      # - name: Login to github and push
      #   run: |
       #    git config --global user.email "mohsenemx@gmail.com"
