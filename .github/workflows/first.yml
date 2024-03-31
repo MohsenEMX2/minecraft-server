@@ -55,7 +55,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_REPOSITORY_PERSONAL_ACCESS_TOKEN }}
         with:
-          source-directory: /
+          source-directory: ./
           destination-github-username: MohsenEMX2
           destination-repository-name: minecraft-server
           user-email: mohsenemx@gmail.com
