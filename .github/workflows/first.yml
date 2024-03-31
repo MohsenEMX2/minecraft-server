@@ -41,7 +41,7 @@ jobs:
         run: echo eula=true >> eula.txt
       - name: Stop the server
         run: |
-          (sleep 5 ; echo hi) &
+          (sleep 5 ; echo hi)
           echo bye
       - name: Run server for first time
         run: java -Xms2G -jar server.jar
