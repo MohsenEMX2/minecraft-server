@@ -49,6 +49,7 @@ jobs:
           (java -Xms2G -jar server.jar) &
           sleep 30
           pkill java
+          pwd
       - name: Push to github
         uses: cpina/github-action-push-to-another-repository@main
         env:
