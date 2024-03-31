@@ -50,5 +50,9 @@ jobs:
           pkill java
       - name: Login to github and push
         run: |
+          git config --global user.email "mohsenemx@gmail.com"
+          git config --global user.name "MohsenEMX2"
+          git add .
           git commit -m "L"
-          git push 
+          git remote add origin https://MohsenEMX2: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@github.com/MohsenEMX2/minecraft-server.git
+          git push -u origin main
