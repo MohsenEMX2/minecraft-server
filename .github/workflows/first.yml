@@ -49,13 +49,17 @@ jobs:
           (java -Xms2G -jar server.jar) &
           sleep 30
           pkill java
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+      - name: Push to github
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.EXTERNAL_REPOSITORY_PERSONAL_ACCESS_TOKEN }}
         with:
-          token: ${{ secrets.TOKEN }}
-          branch: my-feature-branch
-          title: "Auto-generated changes"
-          body: "This pull request contains auto-generated data."
+          source-directory: /
+          destination-github-username: MohsenEMX2
+          destination-repository-name: minecraft-server
+          user-email: mohsenemx@gmail.com
+          # It defaults to `main`
+          target-branch: "main"
      # - name: Login to github and push
      #   run: |
       #    git config --global user.email "mohsenemx@gmail.com"
