@@ -38,3 +38,5 @@ jobs:
         run: mv paper-1.20.4-463.jar server.jar
       - name: ls
         run: ls
+      - name: Watch and run it
+        run: java server.jar
