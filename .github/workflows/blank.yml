@@ -33,7 +33,7 @@ jobs:
       - run: java -version
 
       - name: Install Git
-        run: apt install -y git
+        run: sudo apt install -y git
       # Runs a set of commands using the runners shell
       - name: Download PaperMC
         run: curl -O https://api.papermc.io/v2/projects/paper/versions/1.20.4/builds/463/downloads/paper-1.20.4-463.jar
