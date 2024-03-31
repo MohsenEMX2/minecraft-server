@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'oracle' # See 'Supported distributions' for available options
-          java-version: '21'
+          java-version: '20'
       - run: java -version
       # Runs a set of commands using the runners shell
       - name: Download PaperMC
@@ -39,4 +39,4 @@ jobs:
       - name: ls
         run: ls
       - name: Watch and run it
-        run: watch java -Xms2G -jar server.jar
+        run: java -Xms2G -jar server.jar
